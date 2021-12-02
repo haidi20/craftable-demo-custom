@@ -70,6 +70,14 @@ class FillDefaultAdminUserAndPermissions extends Migration
             'admin.admin-user.edit',
             'admin.admin-user.delete',
 
+            // manage roles (access)
+            'admin.role',
+            'admin.role.index',
+            'admin.role.create',
+            'admin.role.edit',
+            'admin.role.delete',
+            'admin.role.show',
+
             // ability to upload
             'admin.upload',
         ]);

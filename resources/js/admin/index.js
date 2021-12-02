@@ -8,3 +8,6 @@ import './export';
 import './articles-with-relationship';
 import './bulk-action';
 import './tag';
+import './role';
+import './user';
+import './list-shop';

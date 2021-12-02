@@ -186,5 +186,81 @@ return [
         ],
     ],
 
+    'role' => [
+        'title' => 'Roles',
+
+        'actions' => [
+            'index' => 'Roles',
+            'create' => 'New Role',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => "ID",
+            'name' => "Name",
+            'guard_name' => "Guard name",
+            
+        ],
+    ],
+
+    'user' => [
+        'title' => 'Users',
+
+        'actions' => [
+            'index' => 'Users',
+            'create' => 'New User',
+            'edit' => 'Edit :name',
+            'edit_profile' => 'Edit Profile',
+            'edit_password' => 'Edit Password',
+        ],
+
+        'columns' => [
+            'id' => "ID",
+            'name' => "Name",
+            'email' => "Email",
+            'email_verified_at' => "Email verified at",
+            'password' => "Password",
+            'password_repeat' => "Password Confirmation",
+                
+            //Belongs to many relations
+            'roles' => "Roles",
+                
+        ],
+    ],
+
+    'role' => [
+        'title' => 'Roles',
+
+        'actions' => [
+            'index' => 'Roles',
+            'create' => 'New Role',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => "ID",
+            'name' => "Name",
+            'guard_name' => "Guard name",
+            
+        ],
+    ],
+
+    'list-shop' => [
+        'title' => 'List Shop',
+
+        'actions' => [
+            'index' => 'List Shop',
+            'create' => 'New List Shop',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => "ID",
+            'name_shop' => "Name shop",
+            'address' => "Address",
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

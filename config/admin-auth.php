@@ -14,6 +14,10 @@ return [
         'activations' => 'admin_users',
     ],
 
+    'user' => [
+        'guard' => 'user',
+    ],
+
     /*
     |
     | This option controls if Login should check also forbidden key

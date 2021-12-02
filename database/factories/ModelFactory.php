@@ -164,3 +164,41 @@ $factory->define(App\Models\Tag::class, function (Faker\Generator $faker) {
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Role::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'guard_name' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'email' => $faker->email,
+        'email_verified_at' => $faker->dateTime,
+        'password' => bcrypt($faker->password),
+        'remember_token' => null,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+    ];
+});
+
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\ListShop::class, function (Faker\Generator $faker) {
+    return [
+        'name_shop' => $faker->sentence,
+        'address' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+

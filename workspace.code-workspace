@@ -1,0 +1,10 @@
+{
+    "folders": [
+		{
+			"path": "..\\laravel-inertia-vue-tailwind-boilerplate"
+		},
+		{
+			"path": "."
+		}
+	]
+}

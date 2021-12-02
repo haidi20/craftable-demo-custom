@@ -121,3 +121,47 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::post('/admin/tags/{tag}',                            'Admin\TagsController@update')->name('admin/tags/update');
     Route::delete('/admin/tags/{tag}',                          'Admin\TagsController@destroy')->name('admin/tags/destroy');
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
+    Route::get('/admin/roles',                                  'Admin\RolesController@index');
+    Route::get('/admin/roles/create',                           'Admin\RolesController@create');
+    Route::post('/admin/roles',                                 'Admin\RolesController@store');
+    Route::get('/admin/roles/{role}/edit',                      'Admin\RolesController@edit')->name('admin/roles/edit');
+    Route::post('/admin/roles/bulk-destroy',                    'Admin\RolesController@bulkDestroy')->name('admin/roles/bulk-destroy');
+    Route::post('/admin/roles/{role}',                          'Admin\RolesController@update')->name('admin/roles/update');
+    Route::delete('/admin/roles/{role}',                        'Admin\RolesController@destroy')->name('admin/roles/destroy');
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
+    Route::get('/admin/users',                                  'Admin\UsersController@index');
+    Route::get('/admin/users/create',                           'Admin\UsersController@create');
+    Route::post('/admin/users',                                 'Admin\UsersController@store');
+    Route::get('/admin/users/{user}/edit',                      'Admin\UsersController@edit')->name('admin/users/edit');
+    Route::post('/admin/users/{user}',                          'Admin\UsersController@update')->name('admin/users/update');
+    Route::delete('/admin/users/{user}',                        'Admin\UsersController@destroy')->name('admin/users/destroy');
+    Route::get('/admin/users/{user}/resend-activation',         'Admin\UsersController@resendActivationEmail')->name('admin/users/resendActivationEmail');
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
+    Route::get('/admin/list-shops',                             'Admin\ListShopController@index');
+    Route::get('/admin/list-shops/create',                      'Admin\ListShopController@create');
+    Route::post('/admin/list-shops',                            'Admin\ListShopController@store');
+    Route::get('/admin/list-shops/{listShop}/edit',             'Admin\ListShopController@edit')->name('admin/list-shops/edit');
+    Route::post('/admin/list-shops/bulk-destroy',               'Admin\ListShopController@bulkDestroy')->name('admin/list-shops/bulk-destroy');
+    Route::post('/admin/list-shops/{listShop}',                 'Admin\ListShopController@update')->name('admin/list-shops/update');
+    Route::delete('/admin/list-shops/{listShop}',               'Admin\ListShopController@destroy')->name('admin/list-shops/destroy');
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
+    Route::get('/admin/list-shops',                             'Admin\ListShopController@index');
+    Route::get('/admin/list-shops/create',                      'Admin\ListShopController@create');
+    Route::post('/admin/list-shops',                            'Admin\ListShopController@store');
+    Route::get('/admin/list-shops/{listShop}/edit',             'Admin\ListShopController@edit')->name('admin/list-shops/edit');
+    Route::post('/admin/list-shops/bulk-destroy',               'Admin\ListShopController@bulkDestroy')->name('admin/list-shops/bulk-destroy');
+    Route::post('/admin/list-shops/{listShop}',                 'Admin\ListShopController@update')->name('admin/list-shops/update');
+    Route::delete('/admin/list-shops/{listShop}',               'Admin\ListShopController@destroy')->name('admin/list-shops/destroy');
+});

@@ -56,7 +56,7 @@ class AdminUsersController extends Controller
         //     ['id', 'first_name', 'last_name', 'email', 'language']
         // );
 
-        $data = AdminUser::where('first_name', 'like', '%'.request('search').'%')->paginate(5);
+        $data = AdminUser::where('first_name', 'like', '%'.request('search').'%')->paginate(request('paginate', 5));
 
         if ($request->ajax()) {
             return ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')];
@@ -78,7 +78,7 @@ class AdminUsersController extends Controller
 
         return view('admin.admin-user.create', [
             'activation' => Config::get('admin-auth.activation_enabled'),
-            'roles' => Role::where('guard_name', $this->guard)->get(),
+            'roles' => Role::all(),
         ]);
     }
 
