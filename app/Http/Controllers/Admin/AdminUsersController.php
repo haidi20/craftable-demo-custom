@@ -45,20 +45,23 @@ class AdminUsersController extends Controller
     public function index(IndexAdminUser $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(AdminUser::class)->processRequestAndGet(
-            // pass the request with params
-            $request,
+        // $data = AdminListing::create(AdminUser::class)->processRequestAndGet(
+        //     // pass the request with params
+        //     $request,
 
-            // set columns to query
-            ['id', 'first_name', 'last_name', 'email', 'activated', 'forbidden', 'language'],
+        //     // set columns to query
+        //     ['id', 'first_name', 'last_name', 'email', 'activated', 'forbidden', 'language'],
 
-            // set columns to searchIn
-            ['id', 'first_name', 'last_name', 'email', 'language']
-        );
+        //     // set columns to searchIn
+        //     ['id', 'first_name', 'last_name', 'email', 'language']
+        // );
+
+        $data = AdminUser::where('first_name', 'like', '%'.request('search').'%')->paginate(5);
 
         if ($request->ajax()) {
             return ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')];
         }
+
 
         return view('admin.admin-user.index', ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')]);
     }
@@ -174,12 +177,25 @@ class AdminUsersController extends Controller
      */
     public function destroy(DestroyAdminUser $request, AdminUser $adminUser)
     {
+        $adminUser->delete();
+
         if ($request->ajax()) {
-            return response(['message' => 'Although, you cannot delete an user in demo.']);
+            return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
     }
+
+    // public function destroy(DestroyArticle $request, Article $article)
+    // {
+    //     $article->delete();
+
+    //     if ($request->ajax()) {
+    //         return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+    //     }
+
+    //     return redirect()->back();
+    // }
 
     /**
      * Resend activation e-mail

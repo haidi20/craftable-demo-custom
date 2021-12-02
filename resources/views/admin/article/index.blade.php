@@ -77,7 +77,7 @@
                                         </label>
                                     </td>
 
-                                    <td>@{{ item.id }}</td>
+                                    <td>@{{ index + 1 }}</td>
                                     <td>@{{ item.title }}</td>
                                     <td class="text-center text-nowrap">
                                         <span v-if="item.published_at <= now">

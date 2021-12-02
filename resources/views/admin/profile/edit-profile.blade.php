@@ -24,12 +24,12 @@
 
                         <div class="row">
                             <div class="col-md-4 text-center">
-                                <div class="avatar-upload">
+                                {{-- <div class="avatar-upload">
                                     @include('brackets/admin-ui::admin.includes.avatar-uploader', [
                                         'mediaCollection' => app(\Brackets\AdminAuth\Models\AdminUser::class)->getMediaCollection('avatar'),
                                         'media' => $adminUser->getThumbs200ForCollection('avatar')
                                     ])
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('first_name'), 'has-success': this.fields.first_name && this.fields.first_name.valid }">

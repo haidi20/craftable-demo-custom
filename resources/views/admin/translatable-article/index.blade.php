@@ -62,8 +62,6 @@
                                             <span class="switch-slider"></span>
                                         </label>
                                     </td>
-                                    
-                                    
                                     <td>
                                         <div class="row no-gutters">
                                             <div class="col-auto">
